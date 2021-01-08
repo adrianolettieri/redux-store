@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+  app:
+    build:
+      context: .
+    shm_size: '2048m'
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/usr/src/app
+      - ./cache/dotfiles:/root/dotfiles
+    labels:
+      com.dnsdock.alias: ngrx.bi.loc
